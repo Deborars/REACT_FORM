@@ -1,33 +1,67 @@
-import { useState } from 'react'
+import React from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Radio from  './Form/Radio.jsx';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const perguntas = [
+    {
+      pergunta: 'Qual método é utilizado para criar componentes?',
+      options: [
+        'React.makeComponent()',
+        'React.createComponent()',
+        'React.createElement()',
+      ],
+      resposta: 'React.createElement()',
+      id: 'p1',
+    },
+    {
+      pergunta: 'Como importamos um componente externo?',
+      options: [
+        'import Component from "./Component"',
+        'require("./Component")',
+        'import "./Component"',
+      ],
+      resposta: 'import Component from "./Component"',
+      id: 'p2',
+    },
+    {
+      pergunta: 'Qual hook não é nativo?',
+      options: ['useEffect()', 'useFetch()', 'useCallback()'],
+      resposta: 'useFetch()',
+      id: 'p3',
+    },
+    {
+      pergunta: 'Qual palavra deve ser utilizada para criarmos um hook?',
+      options: ['set', 'get', 'use'],
+      resposta: 'use',
+      id: 'p4',
+    },
+  ];
+
+  const [respostas, setRespostas] = React.useState({
+    p1:'',
+    p2:'',
+    p3:'',
+    p4:'',  
+  })
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form id="container">
+        <div>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+        {perguntas.map((pergunta)=>(
+          <Radio {...pergunta}/>
+        ))}
+        
+        <button className="btn">Próxima</button>
+      </form>
     </>
   )
 }
