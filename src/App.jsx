@@ -48,6 +48,10 @@ function App() {
     p4:'',  
   })
 
+  function handleChange(event){
+    console.log(event)
+  }
+
   return (
     <>
       <form id="container">
@@ -57,7 +61,7 @@ function App() {
           </a>
         </div>
         {perguntas.map((pergunta)=>(
-          <Radio {...pergunta}/>
+          <Radio value={respostas[pergunta.id]} onChange={handleChange} key={pergunta.id} {...pergunta}/>
         ))}
         
         <button className="btn">Próxima</button>
