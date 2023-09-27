@@ -10,3 +10,4 @@ Você pode verificar as imagens da conclusão do projeto abaixo :
 ![Alt text](image-1.png)
 
 O questionario está disponível para visualização através do [link](https://react-form-lovat.vercel.app/?to=/placeholder.com)  
+<a href="placeholder.com" target="_blank">Opens in new tab</a>
