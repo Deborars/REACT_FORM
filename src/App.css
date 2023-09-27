@@ -35,7 +35,7 @@ label {
 }
 
 .btn::after {
-  content: '\25BA';
+  content: ' \2192';
 }
 
 .btn:hover {
